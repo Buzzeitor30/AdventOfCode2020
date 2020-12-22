@@ -1,4 +1,5 @@
 input=[16,12,1,0,15,7,11]
+times = 30000000
 numbers = {}
 turn = 0
 for w in input:
@@ -7,7 +8,7 @@ for w in input:
     numbers[w] = (turn,-1)
 last_num = input[-1]
 
-while turn < 30000000:
+while turn < times:
     turn += 1
     x, y = numbers[last_num]
     if y == -1:
@@ -23,6 +24,4 @@ while turn < 30000000:
             numbers[last_num] = (x,turn)
         else:
             numbers[last_num] = (y,turn)
-    
-
-print(last_num)
+print(f' The number that appears in the turn {times} is {last_num}')
